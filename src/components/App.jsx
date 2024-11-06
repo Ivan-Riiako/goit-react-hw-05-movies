@@ -5,14 +5,16 @@ import { Route, Routes } from 'react-router-dom';
 import Home from 'pages/Home';
 import Movies from 'pages/Movies';
 import MovieDetails from 'pages/MovieDetails';
-
+import { GlobalStyle } from './GlobalStyle.styled';
 import { StyledLink, Navigation } from './App.styled';
 
 export const App = () => {
   return (
     <>
       <Navigation>
-        <StyledLink to="/" end> Home</StyledLink>
+        <StyledLink to="/" end>
+          Home
+        </StyledLink>
         <StyledLink to="/movies">Movies</StyledLink>
       </Navigation>
       <Routes>
@@ -20,6 +22,7 @@ export const App = () => {
         <Route path="/movies" element={<Movies />} />
         <Route path="/movies/:movieId" element={<MovieDetails />} />
       </Routes>
+      <GlobalStyle />
     </>
   );
 };
